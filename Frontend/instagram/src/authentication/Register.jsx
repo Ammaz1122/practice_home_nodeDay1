@@ -60,8 +60,10 @@ const Register = () => {
             m_mail,password,full_name,username,dob:`${date}-${month}-${year}`
           }
           const response = await axios.post('http://localhost:3001/api/user/add-data',dataForBE)
-          console.log(response.data)
+          //to store the person in our application 
+          localStorage.setItem('user',JSON.stringify(response.data))
         } 
+      
         
 
   return (
